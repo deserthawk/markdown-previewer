@@ -1,0 +1,63 @@
+body {
+  width: 100%;
+  font-family: 'Outfit', sans-serif;
+}
+
+img {
+  width: 80%;
+}
+
+code {
+  background-color: white;
+}
+
+pre {
+  background-color: white;
+}
+
+#root {
+  width: 100%;
+}
+
+.page {
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+}
+
+.markdown-input {
+  width: 700px;
+  height: 250px;
+  margin: auto;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.markdown-input textarea {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.markdown-previewer {
+  width: 1000px;
+  margin: auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #fbbb728e;
+  padding: 10px;
+}
+/*# sourceMappingURL=style.css.map */

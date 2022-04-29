@@ -1,0 +1,50 @@
+$previewerBackgroundColor: #fbbb728e
+    
+@mixin generalWidthHeight
+    width: 100%
+    
+
+body
+    @include generalWidthHeight
+    font-family: 'Outfit', sans-serif
+
+img
+    width: 80%
+
+code
+    background-color: white
+
+pre
+    background-color: white
+
+#root
+    @include generalWidthHeight
+
+.page
+    @include generalWidthHeight
+
+main
+    @include generalWidthHeight
+    display: flex
+    flex-direction: column
+    justify-content: center
+    margin: auto
+
+.markdown-input
+    width: 700px
+    height: 250px
+    margin: auto
+    padding-bottom: 20px
+    padding-top: 20px
+    textarea
+        width: 100%
+        height: 100%
+        border-radius: 10px
+
+.markdown-previewer
+    width: 1000px
+    margin: auto
+    border: 2px solid black
+    border-radius: 10px
+    background-color: $previewerBackgroundColor
+    padding: 10px

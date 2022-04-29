@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSelector, useDispatch } from 'react-redux'
+import { Provider } from 'react-redux'
+import marked from './markObject';
+import initialMarkDown from './initialMarkDown';
+import store from './store'
+import { setMarkDown } from './markDownSlice'
+
+import './style.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div>
+        <main className='page'>
+          <InputMarkDown />
+          <Previewer />
+        </main>
+      </div>
+    </Provider>
   );
+}
+
+function InputMarkDown() {
+
+  const dispatch = useDispatch();
+
+  function handleChange(event) {
+    const html = marked.parse(event.target.value);
+    dispatch(setMarkDown(html));
+  }
+
+  return (
+    <div className='markdown-input'>
+      <textarea id='editor'
+        onChange={handleChange} defaultValue={initialMarkDown}>
+      </textarea>
+    </div>
+  )
+}
+
+function Previewer() {
+  return (
+    <div>
+      <div id='preview'
+        className='markdown-previewer'
+        dangerouslySetInnerHTML={{ __html: useSelector((state) => state.theMark.markDown) }} />
+    </div>
+  )
 }
 
 export default App;
